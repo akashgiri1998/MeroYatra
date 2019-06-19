@@ -2,12 +2,12 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import RegistrationForm
 from .models import RegistrationData
-#from django.contrib.auth.form import UserCreationForm
+#from django.contrib.auth.form import AuthenticationForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, "Yatri/home.html")
+    return render(request, "Yatri/home.html") 
 
 def SignUp(request):
      context= {"form":RegistrationForm} 
@@ -24,10 +24,14 @@ def addUser(request):
             register.save()
            
 
-      return redirect('index')      
+      return redirect('index')   
+
 	#		form.redirect ('/akash')
       #  else:
      #       form=UserCreationForm()
      #       args={'form':form}
      #       return render(request,"Yatri/register.html",args)   
     
+
+          
+
